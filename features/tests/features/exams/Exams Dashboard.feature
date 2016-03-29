@@ -4,7 +4,7 @@ Feature: Exam Dashboard
   I want to see a table of exams
   So that I can view information about submitted exams
 
-  Scenario: View all exams
+  Scenario: Admin default view 
     Given I'm logged in
     And and I have the admin role
     When I navigate to the Exams page
@@ -18,8 +18,19 @@ Feature: Exam Dashboard
     And I have the admin role
     When I'm viewing the Exams page
     Then I should be able to filter on a single user's exams
+    
+  Scenario: Normal user exam view
+    Given I'm logged in
+    And I do not have the admin role
+    When I'm viewing the Exams page
+    Then I should see only my exams
   
   Scenario: Search exams
+    Given I'm logged in
+    And I have any role
+    When I'm viewing the Exams page
+    Then I should be able to search the exams by type, patient id, tags, 
+      and creator
     
   Scenario: Sort exams list
     
