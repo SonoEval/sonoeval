@@ -9,7 +9,8 @@ Feature: Exam Dashboard
     And and I have the admin role
     When I navigate to the Exams page
     Then I should see a table of all the exams
-    And the results should contain a patinet ID, username, exam type, created date, and a status
+    And the results should contain a patinet ID, username, exam type, created
+      date, and a status
     And the patient ID should by hyperlinked to that exam's page
     And the results should be sortable
     
@@ -63,4 +64,3 @@ Feature: Exam Dashboard
     But if I did not create the exam
     Then I should not be able to view it
     And should be shown a message that I am not allowed to view the exam
-    
